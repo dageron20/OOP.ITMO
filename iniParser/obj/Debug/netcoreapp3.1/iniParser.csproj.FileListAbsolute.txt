@@ -1,0 +1,13 @@
+E:\homework\OOP\iniParser\iniParser\iniParser\bin\Debug\netcoreapp3.1\iniParser.exe
+E:\homework\OOP\iniParser\iniParser\iniParser\bin\Debug\netcoreapp3.1\iniParser.deps.json
+E:\homework\OOP\iniParser\iniParser\iniParser\bin\Debug\netcoreapp3.1\iniParser.runtimeconfig.json
+E:\homework\OOP\iniParser\iniParser\iniParser\bin\Debug\netcoreapp3.1\iniParser.runtimeconfig.dev.json
+E:\homework\OOP\iniParser\iniParser\iniParser\bin\Debug\netcoreapp3.1\iniParser.dll
+E:\homework\OOP\iniParser\iniParser\iniParser\bin\Debug\netcoreapp3.1\iniParser.pdb
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.csprojAssemblyReference.cache
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.AssemblyInfoInputs.cache
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.AssemblyInfo.cs
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.csproj.CoreCompileInputs.cache
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.dll
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.pdb
+E:\homework\OOP\iniParser\iniParser\iniParser\obj\Debug\netcoreapp3.1\iniParser.genruntimeconfig.cache
