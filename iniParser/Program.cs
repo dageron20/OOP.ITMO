@@ -15,8 +15,8 @@ namespace iniParser
             Console.WriteLine(f2);
 
 
-            /*var f22 = inipars.TakeDouble("ADC_DEV", "BufferLenSecons");
-            Console.WriteLine(f2);*/
+            var f22 = inipars.TakeDouble("ADC_DEV", "BufferLenSecons");
+            Console.WriteLine(f22);
 
             /*var f3 = inipars.TakeInt("ADC_DEV", "BufferLenSecons");
             Console.WriteLine(f3);*/

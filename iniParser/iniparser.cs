@@ -41,12 +41,19 @@ namespace iniParser
                         strLine = file.ReadLine();  Возможно бесмысленная конструкция из за того что мы в while и так проверяем не нулевую строку
                         continue;
                     }*/
-                    if (strLine.StartsWith("[") && strLine.EndsWith("]")) // проверка на название [Секции]
+                    if (strLine.StartsWith("[") && (!strLine.EndsWith("]"))) // проверка на название [Секции] (Случай если после секции идет комментарий)
                     {
-                        currentMain = strLine.Substring(1, strLine.Length - 2); // считываем название
+                        strLine = Regex.Replace(strLine, @";.+$", string.Empty); // удаляем комментарий, если он находится в строке
+                        currentMain = strLine.Substring(1, strLine.Length - 3); // считываем название
                     }
                     else
                     {
+                        if (strLine.StartsWith("[") && (strLine.EndsWith("]")))
+                        {
+                            strLine = Regex.Replace(strLine, @";.+$", string.Empty); // удаляем комментарий, если он находится в строке (случай если строка состоит только из секции)
+                            currentMain = strLine.Substring(1, strLine.Length - 2); // считываем название
+                        }
+
                         if (strLine.StartsWith(";"))
                         {
                             // строка = коммент   
