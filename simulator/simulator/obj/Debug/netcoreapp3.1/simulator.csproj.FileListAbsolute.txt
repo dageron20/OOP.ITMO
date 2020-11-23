@@ -1,0 +1,13 @@
+E:\homework\OOP\simulator\simulator\simulator\bin\Debug\netcoreapp3.1\simulator.exe
+E:\homework\OOP\simulator\simulator\simulator\bin\Debug\netcoreapp3.1\simulator.deps.json
+E:\homework\OOP\simulator\simulator\simulator\bin\Debug\netcoreapp3.1\simulator.runtimeconfig.json
+E:\homework\OOP\simulator\simulator\simulator\bin\Debug\netcoreapp3.1\simulator.runtimeconfig.dev.json
+E:\homework\OOP\simulator\simulator\simulator\bin\Debug\netcoreapp3.1\simulator.dll
+E:\homework\OOP\simulator\simulator\simulator\bin\Debug\netcoreapp3.1\simulator.pdb
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.csprojAssemblyReference.cache
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.AssemblyInfoInputs.cache
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.AssemblyInfo.cs
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.csproj.CoreCompileInputs.cache
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.dll
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.pdb
+E:\homework\OOP\simulator\simulator\simulator\obj\Debug\netcoreapp3.1\simulator.genruntimeconfig.cache
