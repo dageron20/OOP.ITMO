@@ -13,6 +13,11 @@ namespace simulator
         {
             DistanceReducer = distancereducer;
         }
-        public override abstract double GetTime(double distance);
+        public override double GetTime(double distance)
+        {
+            int reduceDistance = (int)(distance - distance * DistanceReducer / 100);
+            double time = reduceDistance / Speed;
+            return time;
+        }
     }
 }

@@ -18,6 +18,12 @@ namespace simulator
             RestInterval = restInterval;
         }
 
-        public override abstract double GetTime(double distance);
+        public override double GetTime(double distance)
+        {
+            double time = distance / Speed;
+            int RestTime = (int)(distance / Speed / RestInterval);
+            time += RestTime * RestDuration;
+            return time;
+        }
     }
 }
