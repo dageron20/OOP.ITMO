@@ -9,12 +9,14 @@ namespace ShopProject.Tests
         public void TestAddStore()
         {
             Store okey = new Store("O'key", "Nevskiy 1");
-            Store expected = Manager.manag.Stores[0];
+            Manager manag = new Manager();
+            manag.AddStore(okey);
+            Store expected = manag.Stores[0];
             Store actual = okey;
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        //[TestMethod]
         /*public void TestTryBuy()
         {
             Product bread = new Product("bread");
@@ -66,6 +68,6 @@ namespace ShopProject.Tests
             Assert.AreEqual(expected, actual);
         }*/
 
-
+    
     }
 }

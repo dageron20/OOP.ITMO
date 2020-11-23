@@ -8,6 +8,7 @@ namespace ShopProject
     {
         static void Main(string[] args)
         {
+            Manager manag = new Manager();
             Product bread = new Product("bread", 1);
             Product milk = new Product("milk", 2);
             Product sugar = new Product("sugar", 3);
@@ -45,8 +46,8 @@ namespace ShopProject
             metro.AddProduct(bread, 100, 5);
             metro.AddProduct(milk, 90, 0);
 
-            Console.WriteLine(Manager.manag.LowProduct(bread).Name);
-            List<ProductForShop> ItemList = Manager.manag.Buy(100);
+            Console.WriteLine(manag.LowProduct(bread).Name);
+            List<ProductForShop> ItemList = manag.Buy(100);
             foreach(var item in ItemList)
                 Console.WriteLine(item.IDProduct + ":" + item.Name + " " + item.quantity);
 
@@ -57,7 +58,7 @@ namespace ShopProject
             Console.WriteLine(metro.AllItemsProductPrice(purchase));
 
             Console.WriteLine("Выводит 7 задание");
-            Console.WriteLine(Manager.manag.LowAllProducts(purchase).Name);
+            Console.WriteLine(manag.LowAllProducts(purchase).Name);
         }
     }
 }

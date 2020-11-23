@@ -11,8 +11,7 @@ using static ShopProject.StoreExeptions;
 namespace ShopProject
 {
     public class Product
-    {
-      
+    {      
         public string Name;
         public int IDProduct;
         public Product(string name, int idProduct)
@@ -38,17 +37,11 @@ namespace ShopProject
         }
         public ProductForShop(Product product, int quantity) : base(product.Name, product.IDProduct) // перегрузка для метода "дешавая партия"
         {
-            if (price < 0)
-                throw new IncorrectDataValue("Incorrectly set price");
-            this.price = price;
             if (quantity < 0)
                 throw new IncorrectDataValue("Incorrectly set quantity");
             this.quantity = quantity;
         }
     }
-
-
-
     public class Store
     {
         static int IDStore_ = 1;
@@ -64,7 +57,7 @@ namespace ShopProject
             this.IDStore = IDStore_;
             IDStore_++;           
             products = new List<ProductForShop>();
-            Manager.manag.AddStore(this);
+           
         }       
         public void AddProduct(Product product, int quantity, int price)
         {
@@ -87,9 +80,8 @@ namespace ShopProject
             {
                 if (item.price <= wallet)
                 {
-                    ProductForShop ProductNow = new ProductForShop(item, item.quantity, item.price);
+                    ProductForShop ProductNow = new ProductForShop(item, wallet / item.price, item.price);
                     ListTryBuy.Add(ProductNow);
-                    ListTryBuy[ListTryBuy.Count - 1].quantity = wallet / item.price;
                 }
             }
             return ListTryBuy;
@@ -130,7 +122,7 @@ namespace ShopProject
     }
     public class Manager
     {
-        public static Manager manag = new Manager();
+        
         public List<Store> Stores;
 
         public Manager()
