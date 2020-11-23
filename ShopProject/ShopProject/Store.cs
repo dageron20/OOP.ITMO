@@ -14,45 +14,48 @@ namespace ShopProject
     {
       
         public string Name;
-        public Product(string name)
+        public int IDProduct;
+        public Product(string name, int idProduct)
         {
             Name = name;
-        }
-        public class ProductShop : Product
-        {           
-            public int price { get; set; }
-            public int quantity { get; set; }
-            static int IDProduct_ = 1;
-            public int IDProduct;
-            public ProductShop(Product product, int quantity, int price) : base(product.Name)
-            {
-                if (price < 0)
-                    throw new IncorrectDataValue("Incorrectly set price");
-                this.price = price;
-                if (quantity < 0)
-                    throw new IncorrectDataValue("Incorrectly set quantity");
-                this.quantity = quantity;
-                IDProduct = IDProduct_;
-                IDProduct_++;
-            }
-            public ProductShop(Product product, int quantity) : base(product.Name) // перегрузка для метода "дешавая партия"
-            {
-                if (price < 0)
-                    throw new IncorrectDataValue("Incorrectly set price");
-                this.price = price;
-                if (quantity < 0)
-                    throw new IncorrectDataValue("Incorrectly set quantity");
-                this.quantity = quantity;               
-            }
+            IDProduct = idProduct;
         }
     }
+
+    public class ProductForShop : Product
+    {
+        public int price { get; set; }
+        public int quantity { get; set; }
+
+        public ProductForShop(Product product, int quantity, int price) : base(product.Name, product.IDProduct)
+        {
+            if (price < 0)
+                throw new IncorrectDataValue("Incorrectly set price");
+            this.price = price;
+            if (quantity < 0)
+                throw new IncorrectDataValue("Incorrectly set quantity");
+            this.quantity = quantity;
+        }
+        public ProductForShop(Product product, int quantity) : base(product.Name, product.IDProduct) // перегрузка для метода "дешавая партия"
+        {
+            if (price < 0)
+                throw new IncorrectDataValue("Incorrectly set price");
+            this.price = price;
+            if (quantity < 0)
+                throw new IncorrectDataValue("Incorrectly set quantity");
+            this.quantity = quantity;
+        }
+    }
+
+
+
     public class Store
     {
         static int IDStore_ = 1;
         int IDStore;
         public string Name;
         string Address;
-        public List<Product.ProductShop> products;
+        public List<ProductForShop> products;
         
         public Store(string name, string address)
         {
@@ -60,7 +63,7 @@ namespace ShopProject
             this.Address = address;
             this.IDStore = IDStore_;
             IDStore_++;           
-            products = new List<Product.ProductShop>();
+            products = new List<ProductForShop>();
             Manager.manag.AddStore(this);
         }       
         public void AddProduct(Product product, int quantity, int price)
@@ -71,40 +74,27 @@ namespace ShopProject
                 {
                     item.price += price;
                     item.quantity += quantity;
+                    return;
                 }
-            }
-            Product.ProductShop newProduct = new Product.ProductShop(product, quantity, price);
+            }           
+            ProductForShop newProduct = new ProductForShop(product, quantity, price);
             products.Add(newProduct);
         }
-        public List<Product.ProductShop> Buy(int wallet)
+        public List<ProductForShop> Buy(int wallet)
         {
-            List<Product.ProductShop> ListTryBuy = new List<Product.ProductShop>();
+            List<ProductForShop> ListTryBuy = new List<ProductForShop>();
             foreach(var item in products)
             {
                 if (item.price <= wallet)
                 {
-                    Product.ProductShop ProductNow = new Product.ProductShop(item, item.quantity, item.price);
+                    ProductForShop ProductNow = new ProductForShop(item, item.quantity, item.price);
                     ListTryBuy.Add(ProductNow);
                     ListTryBuy[ListTryBuy.Count - 1].quantity = wallet / item.price;
                 }
             }
             return ListTryBuy;
         }
-        public int itemProduct(Product product, int quantity)
-        {
-            int allPrice = 0;
-            foreach(var item in products)
-            {
-                if (item.quantity >= quantity)
-                {
-                    int price = item.price;
-                    allPrice = quantity * price;
-                    return allPrice;
-                }
-            }
-            return 0;
-        }
-        public int AllItemsProduct(Product.ProductShop[] ListItems)
+        public int AllItemsProductPrice(ProductForShop[] ListItems)
         {
             int allPrice = 0;
             foreach(var Iitem in ListItems)
@@ -126,7 +116,7 @@ namespace ShopProject
             }
             return allPrice;
         }
-        public Product.ProductShop DefineProduct(string name)
+        public ProductForShop DefineProduct(string name)
         {
             foreach(var item in products)
             {
@@ -157,7 +147,7 @@ namespace ShopProject
             Store answer = null;
             foreach(var item in Stores)
             {
-                Product.ProductShop current = item.DefineProduct(product.Name);
+                ProductForShop current = item.DefineProduct(product.Name);
                 if ((current != null) && (current.price < min))
                 {
                     min = current.price;
@@ -166,22 +156,22 @@ namespace ShopProject
             }
             return answer;
         }
-        public List<Product.ProductShop> Buy(int summ)
+        public List<ProductForShop> Buy(int summ)
         {
-            List<Product.ProductShop> ItemsList = new List<Product.ProductShop>();
+            List<ProductForShop> ItemsList = new List<ProductForShop>();
             foreach(var item in Stores)
             {
                 ItemsList.AddRange(item.Buy(summ));
             }
             return ItemsList;
         }
-        public Store LowAllProducts(Product.ProductShop[] purchase)
+        public Store LowAllProducts(ProductForShop[] purchase)
         {
             Store answer = null;
             int minPrice = int.MaxValue;
             foreach(var item in Stores)
             {
-                int purchasePrice = item.AllItemsProduct(purchase);
+                int purchasePrice = item.AllItemsProductPrice(purchase);
                 if (purchasePrice < minPrice)
                 {
                     minPrice = purchasePrice;

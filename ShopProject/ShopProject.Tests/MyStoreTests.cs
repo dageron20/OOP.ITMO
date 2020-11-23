@@ -15,7 +15,7 @@ namespace ShopProject.Tests
         }
 
         [TestMethod]
-        public void TestTryBuy()
+        /*public void TestTryBuy()
         {
             Product bread = new Product("bread");
             Product milk = new Product("milk");
@@ -64,7 +64,7 @@ namespace ShopProject.Tests
             actual.Add(new Product.ProductShop(knife, 1, 100));
             actual.Add(new Product.ProductShop(bread, 20, 5));
             Assert.AreEqual(expected, actual);
-        }
+        }*/
 
 
     }
