@@ -9,7 +9,7 @@ namespace simulator
         public Centaur()
             : base("Centaur", 15, 8, 2)
         { }
-        public override double RestDur(double distance)
+        public override double ResDuration(double distance)
         {
             return 2;
         }

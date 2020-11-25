@@ -9,7 +9,7 @@ namespace simulator
         public MagicCarpet() 
             : base("Magic carpet", 10, 3)
         { }
-        public override double DistanceReducer2(double distance)
+        public override double DistReduction(double distance)
         {
             if ((distance >= 1000) && (distance < 5000))
                 return distance;

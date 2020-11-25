@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\homework\\OOP\\simulator\\simulator\\simulator\\simulator.csproj": {}
+    "E:\\homework\\OOP\\Shop\\OOP.ITMO\\simulator\\simulator\\simulator.csproj": {}
   },
   "projects": {
-    "E:\\homework\\OOP\\simulator\\simulator\\simulator\\simulator.csproj": {
+    "E:\\homework\\OOP\\Shop\\OOP.ITMO\\simulator\\simulator\\simulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\homework\\OOP\\simulator\\simulator\\simulator\\simulator.csproj",
+        "projectUniqueName": "E:\\homework\\OOP\\Shop\\OOP.ITMO\\simulator\\simulator\\simulator.csproj",
         "projectName": "simulator",
-        "projectPath": "E:\\homework\\OOP\\simulator\\simulator\\simulator\\simulator.csproj",
+        "projectPath": "E:\\homework\\OOP\\Shop\\OOP.ITMO\\simulator\\simulator\\simulator.csproj",
         "packagesPath": "C:\\Users\\Денис\\.nuget\\packages\\",
-        "outputPath": "E:\\homework\\OOP\\simulator\\simulator\\simulator\\obj\\",
+        "outputPath": "E:\\homework\\OOP\\Shop\\OOP.ITMO\\simulator\\simulator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

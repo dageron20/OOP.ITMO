@@ -9,7 +9,7 @@ namespace simulator
         public BootsOfATV()
             : base("Boots Of ATV", 6, 60, 10)
         { }
-        public override double RestDur(double distance)
+        public override double ResDuration(double distance)
         {
             if (times == 1)
             {

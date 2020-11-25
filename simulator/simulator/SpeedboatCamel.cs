@@ -10,7 +10,7 @@ namespace simulator
         public SpeedboatCamel()
             : base("SpeedBoat Camel", 40, 10, 5)
         { }
-        public override double RestDur(double distance)
+        public override double ResDuration(double distance)
         {
             int times = 1;
             if (times == 1)

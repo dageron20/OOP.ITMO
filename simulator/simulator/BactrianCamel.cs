@@ -9,7 +9,7 @@ namespace simulator
         public BactrianCamel()
              : base("Bactrian Camel", 10, 30, 5)
         {  }
-        public override double RestDur(double distance)
+        public override double ResDuration(double distance)
         {
             if (times == 1)
             {

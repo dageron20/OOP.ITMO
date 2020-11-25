@@ -17,7 +17,7 @@ namespace simulator
             RestInterval = restInterval;           
         }
         public static int times = 1;
-        public abstract double RestDur(double distance);
+        public abstract double ResDuration(double distance);
         public override double GetTime(double distance)
         {
             double time = distance / Speed;
@@ -27,7 +27,7 @@ namespace simulator
             if (distance % (Speed * RestInterval) == 0)
                 counts--;
             for (int i = 0; i < counts; i++)
-                time += RestDur(distance);
+                time += ResDuration(distance);
             return time;
         }
     }

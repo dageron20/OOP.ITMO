@@ -13,10 +13,10 @@ namespace simulator
         {
             DistanceReducer = distancereducer;
         }
-        public abstract double DistanceReducer2(double distance);
+        public abstract double DistReduction(double distance);
         public override double GetTime (double distance)
         {
-            return DistanceReducer2(distance) / Speed;
+            return DistReduction(distance) / Speed;
         }
     }
 }

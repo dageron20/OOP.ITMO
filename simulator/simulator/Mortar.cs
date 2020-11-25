@@ -10,7 +10,7 @@ namespace simulator
             : base("Mortar", 8, 6)
         { }
 
-        public override double DistanceReducer2(double distance)
+        public override double DistReduction(double distance)
         {
             return distance * 0.94;
         }

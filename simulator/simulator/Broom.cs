@@ -9,7 +9,7 @@ namespace simulator
         public Broom()
             : base("Broom", 20, 1)
         { }
-        public override double DistanceReducer2(double distance)
+        public override double DistReduction(double distance)
         {
             double timeEnd = 0;
             for (int i = 1; timeEnd + 1000 < distance; i++)
