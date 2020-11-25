@@ -6,23 +6,25 @@ namespace simulator
 {
     class SpeedboatCamel : Landtransport
     {
+
         public SpeedboatCamel()
             : base("SpeedBoat Camel", 40, 10, 5)
         { }
-
-        public override double GetTime(double distance)
+        public override double RestDur(double distance)
         {
-            double time = distance / Speed;
-            int restTimes = (int)(distance / Speed / RestInterval);
-            if(restTimes == 1)
+            int times = 1;
+            if (times == 1)
             {
-                time += RestDuration;
+                times++;
+                return 5;
             }
-            if(restTimes > 1)
+            if (times == 2)
             {
-                time += RestDuration + 6.5 + 8 * (restTimes - 2);
+                times++;
+                return 6.5;
             }
-            return time;
+            else
+                return 8;
         }
     }
 }

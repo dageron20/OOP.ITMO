@@ -9,15 +9,12 @@ namespace simulator
         public Broom()
             : base("Broom", 20, 1)
         { }
-        public override double GetTime(double distance)
+        public override double DistanceReducer2(double distance)
         {
-            int reduceTimes = (int)(distance / 1000);
-            for(int i = 1; i < reduceTimes; i++)
-            {
-                distance -= distance / 100;
-            }
-            double time = distance / Speed;
-            return time;
+            double timeEnd = 0;
+            for (int i = 1; timeEnd + 1000 < distance; i++)
+                distance = (distance + 1000 * i) * 0.99;
+            return timeEnd;
         }
     }
 }

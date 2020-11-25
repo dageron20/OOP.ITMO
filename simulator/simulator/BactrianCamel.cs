@@ -9,13 +9,15 @@ namespace simulator
         public BactrianCamel()
              : base("Bactrian Camel", 10, 30, 5)
         {  }
-
-        public override double GetTime(double distance)
+        public override double RestDur(double distance)
         {
-            double time = distance / Speed;
-            int RestTime = (int)(distance / Speed / RestInterval);          
-            time += RestDuration + RestTime * 8;
-            return time;
+            if (times == 1)
+            {
+                times++;
+                return 5;
+            }
+            else
+                return 8;               
         }
     }
 }

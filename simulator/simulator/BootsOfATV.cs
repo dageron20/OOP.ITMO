@@ -9,12 +9,15 @@ namespace simulator
         public BootsOfATV()
             : base("Boots Of ATV", 6, 60, 10)
         { }
-        public override double GetTime(double distance)
+        public override double RestDur(double distance)
         {
-            double time = distance / Speed;
-            int restTimes = (int)(distance / Speed / RestInterval);           
-            time += RestDuration + restTimes * 5;
-            return time;
+            if (times == 1)
+            {
+                times++;
+                return 10;
+            }
+            else
+                return 5;
         }
     }
 }

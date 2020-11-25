@@ -22,7 +22,12 @@ namespace simulator
             Console.WriteLine(mortar.GetTime(1000));
             Console.WriteLine(broom.GetTime(1000));*/
 
-            Race<Landtransport> Formula1 = new Race<Landtransport>(1000);
+            Console.WriteLine(centaur.GetTime(120)); // 8
+            Console.WriteLine(centaur.GetTime(121)); // 10.0666
+            Console.WriteLine(centaur.GetTime(240)); // 18
+            Console.WriteLine(centaur.GetTime(241)); // 20.0666
+            Console.WriteLine(boots.GetTime(721));
+            /*Race<Landtransport> Formula1 = new Race<Landtransport>(1000);
             Formula1.RaceTransports.Add(speedboat);
             Formula1.RaceTransports.Add(bactrian);
             Formula1.RaceTransports.Add(boots);
@@ -43,7 +48,7 @@ namespace simulator
             CheatingFormula.RaceTransports.Add(magiccarpet);
             CheatingFormula.RaceTransports.Add(mortar);
             CheatingFormula.RaceTransports.Add(broom);
-            Console.WriteLine(CheatingFormula.WhoWin().Name + " --- " + " Win AirLandTransport ");
+            Console.WriteLine(CheatingFormula.WhoWin().Name + " --- " + " Win AirLandTransport ");*/
         }
     }
 }

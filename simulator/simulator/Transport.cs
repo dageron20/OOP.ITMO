@@ -13,8 +13,7 @@ namespace simulator
         {
             Name = name;
             Speed = speed;
-        }
-
-        public abstract double GetTime(double distance);        
+        } 
+        public virtual double GetTime(double distance) { return 0; }
     }
 }
