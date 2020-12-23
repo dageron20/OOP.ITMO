@@ -4,7 +4,7 @@ using System.Text;
 
 namespace backup
 {
-    class RestorePoint
+    public class RestorePoint
     {
         public List<File> Files = new List<File>();
         public long PointSize;

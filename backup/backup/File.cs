@@ -5,7 +5,7 @@ using System.IO;
 
 namespace backup
 {
-    class File
+    public class File
     {
         public DateTime Date;
         public DateTime LastWriteDate;
@@ -19,6 +19,5 @@ namespace backup
             LastWriteDate = fileinf.LastWriteTime;
             Name = fileinf.Name;
         }
-
     }
 }

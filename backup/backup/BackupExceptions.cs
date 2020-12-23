@@ -7,7 +7,6 @@ namespace backup
     class BackupExceptions : System.Exception
     {
         public BackupExceptions(string message) : base(message) { }
-
         public class FileNotExist : BackupExceptions
         {
             public FileNotExist(string message)

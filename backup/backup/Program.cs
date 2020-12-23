@@ -22,8 +22,6 @@ namespace backup
             firstBack.AddFile(f2);
             firstBack.AddFile(f3);
 
-            //Console.WriteLine(firstBack.ShowFileBackup(f1));
-
             firstBack.CreateRPoint();
 
             File f4 = new File(path4);
@@ -31,8 +29,11 @@ namespace backup
 
             firstBack.CreateIPoint();
 
-            //firstBack.PurificationByQuantity(1);
-            firstBack.PurificationBySize(5);
+            LimitGibForRemove lim = new LimitGibForRemove();
+            //lim.PushLimit(new PurificationByQuantity(1));
+            lim.PushLimit(new PurificationBySize(10));
+            lim.ValueForGibridMax(true);
+            lim.GibridClear(firstBack);
         }
     }
 }

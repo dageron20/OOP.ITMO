@@ -6,11 +6,11 @@ using static backup.BackupExceptions;
 
 namespace backup
 {
-    class Backup
+    public class Backup
     {
         public DateTime Date;
         public List<File> files;
-        public List<RestorePoint> points = new List<RestorePoint>();
+        public List<RestorePoint> points;
         public long SizeFiles;
         public long SizeAllPoints;
         public static int BackupID = 0;
@@ -22,6 +22,7 @@ namespace backup
             Date = DateTime.Now;
             id = BackupID;
             BackupID++;
+            points = new List<RestorePoint>();
         }
         public void AddFile(File file)
         {
@@ -64,33 +65,6 @@ namespace backup
                 points.Add(new RestorePoint(IPoint));
             else
                 throw new ImposibleAddInc("List is empty");
-        }
-        public void PurificationByQuantity(int number)
-        {
-            while(points.Count != number)
-            {               
-                points.RemoveAt(0);
-            }
-        }
-        public void PurificationBySize(long numSize)
-        {
-            foreach(var item in points)
-            {
-                SizeAllPoints += item.PointSize;
-            }
-            while(SizeAllPoints > numSize )
-            {
-                SizeAllPoints -= points[0].PointSize;
-                files.RemoveAt(0);
-            }
-        }
-        public void PurificationByTime(DateTime date)
-        {
-            foreach(var item in points)
-            {
-                if (item.DTime < date)
-                    points.RemoveAt(points.IndexOf(item));
-            }
         }
     }
 }
